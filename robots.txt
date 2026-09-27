@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jaborzodafayzali.github.io/zabon/sitemap.xml
