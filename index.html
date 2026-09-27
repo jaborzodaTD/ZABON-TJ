@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZABON — Language Academy | Изучение таджикского, русского и английского языков</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="ZABON — Language Academy | Изучение таджикского, русского и английского языков">
+    <meta name="description" content="ZABON — современная образовательная платформа для изучения таджикского, русского и английского языков. Интерактивные уроки, тренажёр слов, грамматика, разговорный клуб и AI-переводчик. Автор: JABORZODA FAYZALI.">
+    <meta name="keywords" content="ZABON, JABORZODA FAYZALI, изучить таджикский язык, учить русский, english academy, tajik language online, EdTech, карточки слов, flashcards">
+    <meta name="author" content="JABORZODA FAYZALI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jaborzodafayzali.github.io/zabon/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaborzodafayzali.github.io/zabon/">
+    <meta property="og:title" content="ZABON — Language Academy">
+    <meta property="og:description" content="Интерактивная EdTech платформа для изучения трёх языков: Тоҷикӣ, Русский, English.">
+    <meta property="og:image" content="https://jaborzodafayzali.github.io/zabon/assets/og-image.png">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ZABON — Language Academy">
+    <meta property="twitter:description" content="Учи языки с удовольствием. Тоҷикӣ, Русский, English.">
+    
+    <!-- PWA & Favicon -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "ZABON Language Academy",
+      "founder": {
+        "@type": "Person",
+        "name": "JABORZODA FAYZALI"
+      },
+      "url": "https://jaborzodafayzali.github.io/zabon/",
+      "description": "Международная образовательная платформа для изучения языков.",
+      "knowsLanguage": ["tg", "ru", "en"]
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <span class="brand-logo">🚀</span>
+                    <div class="brand-text">
+                        <span class="brand-title">ZABON</span>
+                        <span class="brand-subtitle">ACADEMY</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-target="home">
+                    <span class="icon">🏠</span> <span class="i18n" data-key="nav_home">Главная</span>
+                </button>
+                <button class="nav-item" data-target="courses">
+                    <span class="icon">📚</span> <span class="i18n" data-key="nav_courses">Курсы</span>
+                </button>
+                <button class="nav-item" data-target="dictionary">
+                    <span class="icon">🔤</span> <span class="i18n" data-key="nav_dictionary">Словарь</span>
+                </button>
+                <button class="nav-item" data-target="flashcards">
+                    <span class="icon">🎴</span> <span class="i18n" data-key="nav_flashcards">Карточки</span>
+                </button>
+                <button class="nav-item" data-target="translator">
+                    <span class="icon">🌐</span> <span class="i18n" data-key="nav_translator">Переводчик</span>
+                </button>
+                <button class="nav-item" data-target="speaking">
+                    <span class="icon">🎙️</span> <span class="i18n" data-key="nav_speaking">Speaking</span>
+                </button>
+                <button class="nav-item" data-target="quiz">
+                    <span class="icon">🎯</span> <span class="i18n" data-key="nav_quiz">Тесты</span>
+                </button>
+                <button class="nav-item" data-target="grammar">
+                    <span class="icon">📖</span> <span class="i18n" data-key="nav_grammar">Грамматика</span>
+                </button>
+                <button class="nav-item" data-target="progress">
+                    <span class="icon">📈</span> <span class="i18n" data-key="nav_progress">Прогресс</span>
+                </button>
+                <button class="nav-item" data-target="profile">
+                    <span class="icon">👤</span> <span class="i18n" data-key="nav_profile">Профиль</span>
+                </button>
+                <button class="nav-item" data-target="about">
+                    <span class="icon">ℹ️</span> <span class="i18n" data-key="nav_about">О проекте</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="author-badge">
+                    <span class="label">Founder & CEO</span>
+                    <span class="name">JABORZODA FAYZALI</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-wrapper">
+            <!-- Top Header Bar -->
+            <header class="top-header">
+                <div class="header-mobile-brand">
+                    <span>🚀 ZABON</span>
+                </div>
+
+                <div class="header-stats">
+                    <div class="stat-badge streak-badge" title="Дней подряд">
+                        🔥 <span id="streak-count">0</span>
+                    </div>
+                    <div class="stat-badge xp-badge" title="Очки опыта">
+                        ⭐ <span id="xp-count">0</span> XP
+                    </div>
+                </div>
+
+                <div class="header-controls">
+                    <select id="ui-lang-select" class="control-select" aria-label="Язык интерфейса">
+                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="tg">🇹🇯 Тоҷикӣ</option>
+                        <option value="en">🇬🇧 English</option>
+                    </select>
+
+                    <button id="theme-toggle" class="icon-button" aria-label="Переключить тему">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dynamic Views Container -->
+            <main class="content-area">
+                
+                <!-- VIEW: HOME -->
+                <section id="view-home" class="view-section active">
+                    <div class="hero-card">
+                        <div class="hero-content">
+                            <span class="badge-accent">ZABON EDTECH PLATFORM</span>
+                            <h1 class="i18n" data-key="hero_title">Учи языки. Говори свободно.</h1>
+                            <p class="i18n" data-key="hero_subtitle">Изучайте таджикский, русский и английский через интерактивные уроки, практику, словарь и реальные диалоги.</p>
+                            <div class="hero-actions">
+                                <button class="btn btn-primary" onclick="window.zabonApp.navigateTo('courses')">
+                                    🚀 <span class="i18n" data-key="btn_start">Начать обучение</span>
+                                </button>
+                                <button class="btn btn-secondary" onclick="window.zabonApp.navigateTo('dictionary')">
+                                    📖 <span class="i18n" data-key="btn_dict">Открыть словарь</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="floating-card c1">🇹🇯 Тоҷикӣ</div>
+                            <div class="floating-card c2">🇷🇺 Русский</div>
+                            <div class="floating-card c3">🇬🇧 English</div>
+                        </div>
+                    </div>
+
+                    <!-- Daily Challenge -->
+                    <div class="daily-challenge-box">
+                        <div class="challenge-header">
+                            <div>
+                                <span class="tag">DAILY GOAL</span>
+                                <h3 class="i18n" data-key="daily_title">Задание на сегодня</h3>
+                            </div>
+                            <div class="reward">+50 XP</div>
+                        </div>
+                        <p class="i18n" data-key="daily_desc">Завершите 1 урок, пройдите 1 тест и изучите 5 новых слов в словаре.</p>
+                        <div class="progress-bar-container">
+                            <div id="daily-progress-bar" class="progress-bar" style="width: 33%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Main Target Languages -->
+                    <h2 class="section-title i18n" data-key="select_lang">Выберите язык для изучения</h2>
+                    <div class="languages-grid">
+                        <div class="lang-card" onclick="window.zabonApp.filterCoursesByLang('tg')">
+                            <div class="flag">🇹🇯</div>
+                            <h3>Тоҷикӣ</h3>
+                            <p>Таджикский язык от A1 до C1. Алфавит, грамматика и разговорная речь.</p>
+                            <div class="card-meta">
+                                <span>15 Уроков</span>
+                                <span>A1 - C1</span>
+                            </div>
+                        </div>
+                        <div class="lang-card" onclick="window.zabonApp.filterCoursesByLang('ru')">
+                            <div class="flag">🇷🇺</div>
+                            <h3>Русский</h3>
+                            <p>Курсы русского языка для всех уровней подготовки.</p>
+                            <div class="card-meta">
+                                <span>18 Уроков</span>
+                                <span>A1 - C1</span>
+                            </div>
+                        </div>
+                        <div class="lang-card" onclick="window.zabonApp.filterCoursesByLang('en')">
+                            <div class="flag">🇬🇧</div>
+                            <h3>English</h3>
+                            <p>Современный английский язык: от базового до свободного разговорного.</p>
+                            <div class="card-meta">
+                                <span>20 Уроков</span>
+                                <span>A1 - C1</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: COURSES -->
+                <section id="view-courses" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_courses">Интерактивные курсы</h1>
+                        <p>Выберите нужный уровень и начните проходить интерактивные занятия.</p>
+                    </div>
+
+                    <div class="filter-bar">
+                        <button class="filter-btn active" onclick="window.zabonApp.renderCourses('all')">Все</button>
+                        <button class="filter-btn" onclick="window.zabonApp.renderCourses('tg')">🇹🇯 Тоҷикӣ</button>
+                        <button class="filter-btn" onclick="window.zabonApp.renderCourses('ru')">🇷🇺 Русский</button>
+                        <button class="filter-btn" onclick="window.zabonApp.renderCourses('en')">🇬🇧 English</button>
+                    </div>
+
+                    <div id="courses-list" class="courses-grid">
+                        <!-- Dynamic Course Cards -->
+                    </div>
+                </section>
+
+                <!-- VIEW: LESSON -->
+                <section id="view-lesson" class="view-section">
+                    <div class="lesson-container">
+                        <div class="lesson-header">
+                            <button class="btn btn-outline" onclick="window.zabonApp.navigateTo('courses')">← Назад к курсам</button>
+                            <div class="lesson-progress-text"><span id="lesson-step-num">1</span> / <span id="lesson-total-steps">5</span></div>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="lesson-progress-bar" class="progress-bar" style="width: 20%;"></div>
+                        </div>
+
+                        <div id="lesson-card-body" class="lesson-body">
+                            <!-- Dynamic Lesson Steps -->
+                        </div>
+
+                        <div class="lesson-footer">
+                            <button id="lesson-prev-btn" class="btn btn-secondary" onclick="window.zabonApp.prevLessonStep()">Previous</button>
+                            <button id="lesson-next-btn" class="btn btn-primary" onclick="window.zabonApp.nextLessonStep()">Next →</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: DICTIONARY -->
+                <section id="view-dictionary" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_dictionary">Интерактивный словарь</h1>
+                        <p>Учите новые слова с озвучкой, транскрипцией и примерами употребления.</p>
+                    </div>
+
+                    <div class="dictionary-controls">
+                        <input type="text" id="dict-search" class="input-field" placeholder="Поиск слова (TJ / RU / EN)..." oninput="window.zabonApp.filterDictionary()">
+                        <div class="dict-filters">
+                            <button class="filter-btn active" onclick="window.zabonApp.setDictCategory('all', this)">Все слова</button>
+                            <button class="filter-btn" onclick="window.zabonApp.setDictCategory('fav', this)">❤️ Избранное</button>
+                        </div>
+                    </div>
+
+                    <div id="dictionary-list" class="dictionary-grid">
+                        <!-- Dynamic Words Cards -->
+                    </div>
+                </section>
+
+                <!-- VIEW: FLASHCARDS -->
+                <section id="view-flashcards" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_flashcards">Тренажёр карточек (Flashcards)</h1>
+                        <p>Переворачивайте карточку, чтобы узнать перевод и закрепить слово в памяти.</p>
+                    </div>
+
+                    <div class="flashcard-wrapper">
+                        <div id="flashcard" class="flashcard" onclick="this.classList.toggle('flipped')">
+                            <div class="flashcard-front">
+                                <span class="fc-lang" id="fc-lang-front">English</span>
+                                <h2 id="fc-word-front">BEAUTIFUL</h2>
+                                <button class="btn-audio" onclick="event.stopPropagation(); window.zabonApp.speakText(document.getElementById('fc-word-front').innerText, 'en')">🔊 Произношение</button>
+                                <span class="fc-hint">Нажмите, чтобы перевернуть</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="fc-lang">Перевод</span>
+                                <div class="fc-translations">
+                                    <p>🇷🇺 <strong id="fc-word-ru">Красивый</strong></p>
+                                    <p>🇹🇯 <strong id="fc-word-tg">Зебо</strong></p>
+                                </div>
+                                <p class="fc-example" id="fc-example">"She lives in a beautiful city."</p>
+                            </div>
+                        </div>
+
+                        <div class="flashcard-actions">
+                            <button class="btn btn-danger" onclick="window.zabonApp.rateFlashcard('hard')">❌ Не знаю</button>
+                            <button class="btn btn-warning" onclick="window.zabonApp.rateFlashcard('medium')">😐 Сложно</button>
+                            <button class="btn btn-success" onclick="window.zabonApp.rateFlashcard('easy')">✅ Знаю (+10 XP)</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: TRANSLATOR -->
+                <section id="view-translator" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_translator">Умный переводчик ZABON</h1>
+                        <p>Моментальный перевод фразы между таджикским, русским и английским.</p>
+                    </div>
+
+                    <div class="translator-box">
+                        <div class="translator-lang-bar">
+                            <select id="trans-from" class="control-select">
+                                <option value="tg">🇹🇯 Тоҷикӣ</option>
+                                <option value="ru" selected>🇷🇺 Русский</option>
+                                <option value="en">🇬🇧 English</option>
+                            </select>
+                            <button class="btn-icon-swap" onclick="window.zabonApp.swapTranslatorLangs()">⇄</button>
+                            <select id="trans-to" class="control-select">
+                                <option value="tg" selected>🇹🇯 Тоҷикӣ</option>
+                                <option value="ru">🇷🇺 Русский</option>
+                                <option value="en">🇬🇧 English</option>
+                            </select>
+                        </div>
+
+                        <div class="translator-io">
+                            <div class="io-group">
+                                <textarea id="trans-input" class="textarea-field" placeholder="Введите текст для перевода..."></textarea>
+                                <div class="io-actions">
+                                    <button class="btn btn-sm" onclick="window.zabonApp.speakText(document.getElementById('trans-input').value, document.getElementById('trans-from').value)">🔊</button>
+                                    <button class="btn btn-sm" onclick="document.getElementById('trans-input').value=''">🧹 Очистить</button>
+                                </div>
+                            </div>
+                            <div class="io-group">
+                                <div id="trans-output" class="translation-result-box">Перевод появится здесь...</div>
+                                <div class="io-actions">
+                                    <button class="btn btn-sm" onclick="window.zabonApp.speakText(document.getElementById('trans-output').innerText, document.getElementById('trans-to').value)">🔊</button>
+                                    <button class="btn btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('trans-output').innerText)">📋 Скопировать</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" onclick="window.zabonApp.performTranslation()">🚀 Перевести</button>
+                    </div>
+                </section>
+
+                <!-- VIEW: SPEAKING -->
+                <section id="view-speaking" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_speaking">Разговорный тренажёр (Speaking)</h1>
+                        <p>Практикуйте реальные диалоги с помощью распознавания речи Web Speech API.</p>
+                    </div>
+
+                    <div class="speaking-container">
+                        <div class="chat-dialog-box" id="speaking-chat">
+                            <div class="chat-bubble bot">
+                                <strong>AI Tutor:</strong> Hello! Welcome to ZABON Academy. How are you today?
+                            </div>
+                        </div>
+
+                        <div class="speaking-controls">
+                            <button id="mic-btn" class="btn btn-primary btn-mic" onclick="window.zabonApp.toggleSpeechRecognition()">
+                                🎙️ Нажмите и говорите
+                            </button>
+                            <p id="speech-status" class="status-text">Нажмите на микрофон для ответа</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: QUIZ -->
+                <section id="view-quiz" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_quiz">Интерактивный тест</h1>
+                        <p>Проверьте свои знания и заработайте дополнительный XP.</p>
+                    </div>
+
+                    <div class="quiz-card" id="quiz-card-container">
+                        <!-- Dynamic Quiz Content -->
+                    </div>
+                </section>
+
+                <!-- VIEW: GRAMMAR -->
+                <section id="view-grammar" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_grammar">Справочник по грамматике</h1>
+                        <p>Понятные правила, таблицы и примеры для всех трёх языков.</p>
+                    </div>
+
+                    <div id="grammar-list" class="grammar-grid">
+                        <!-- Dynamic Grammar Cards -->
+                    </div>
+                </section>
+
+                <!-- VIEW: PROGRESS -->
+                <section id="view-progress" class="view-section">
+                    <div class="page-header">
+                        <h1 class="i18n" data-key="nav_progress">Ваш личный прогресс</h1>
+                        <p>Статистика обучения, график активности и достижения.</p>
+                    </div>
+
+                    <div class="stats-overview-grid">
+                        <div class="stat-card">
+                            <span class="icon">🔥</span>
+                            <div class="val" id="prog-streak">0</div>
+                            <div class="lbl">Дней подряд</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="icon">⭐</span>
+                            <div class="val" id="prog-xp">0</div>
+                            <div class="lbl">Всего XP</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="icon">📚</span>
+                            <div class="val" id="prog-lessons">0</div>
+                            <div class="lbl">Пройдено уроков</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="icon">🧠</span>
+                            <div class="val" id="prog-words">0</div>
+                            <div class="lbl">Изучено слов</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Активность за неделю</h3>
+                        <div class="svg-chart-container">
+                            <svg class="chart-svg" viewBox="0 0 500 150">
+                                <polyline fill="none" stroke="var(--primary)" stroke-width="4" points="0,120 80,90 160,100 240,40 320,70 400,20 480,50" />
+                                <circle cx="0" cy="120" r="6" fill="var(--primary)" />
+                                <circle cx="80" cy="90" r="6" fill="var(--primary)" />
+                                <circle cx="160" cy="100" r="6" fill="var(--primary)" />
+                                <circle cx="240" cy="40" r="6" fill="var(--primary)" />
+                                <circle cx="320" cy="70" r="6" fill="var(--primary)" />
+                                <circle cx="400" cy="20" r="6" fill="var(--primary)" />
+                                <circle cx="480" cy="50" r="6" fill="var(--primary)" />
+                            </svg>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: PROFILE -->
+                <section id="view-profile" class="view-section">
+                    <div class="profile-card">
+                        <div class="profile-avatar">👨‍🎓</div>
+                        <div class="profile-info">
+                            <h2>JABORZODA FAYZALI</h2>
+                            <p class="role-badge">Founder & Lead Student</p>
+                            <p class="bio">Изучает Тоҷикӣ, Русский и English с помощью ZABON Academy.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title">Достижения</h3>
+                    <div id="achievements-list" class="achievements-grid">
+                        <!-- Dynamic Achievements -->
+                    </div>
+                </section>
+
+                <!-- VIEW: ABOUT -->
+                <section id="view-about" class="view-section">
+                    <div class="about-card">
+                        <h1>О проекте ZABON Language Academy</h1>
+                        <p>ZABON Language Academy — это современная международная EdTech платформа, созданная с целью объединения культур и устранения языковых барьеров между носителями таджикского, русского и английского языков.</p>
+                        <hr class="divider">
+                        <h3>Основатель и архитектор:</h3>
+                        <p><strong>JABORZODA FAYZALI</strong></p>
+                        <p>Платформа спроектирована с использованием лучших стандартов UX/UI, доступности (Accessibility), адаптивности для мобильных устройств и поисковой оптимизации (SEO).</p>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Site Footer -->
+            <footer class="site-footer">
+                <p>&copy; 2026 ZABON Language Academy. Founded by <strong>JABORZODA FAYZALI</strong>. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <button class="bottom-nav-item active" data-target="home">
+                <span class="icon">🏠</span>
+                <span class="lbl i18n" data-key="nav_home">Главная</span>
+            </button>
+            <button class="bottom-nav-item" data-target="courses">
+                <span class="icon">📚</span>
+                <span class="lbl i18n" data-key="nav_courses">Курсы</span>
+            </button>
+            <button class="bottom-nav-item" data-target="dictionary">
+                <span class="icon">🔤</span>
+                <span class="lbl i18n" data-key="nav_dictionary">Словарь</span>
+            </button>
+            <button class="bottom-nav-item" data-target="translator">
+                <span class="icon">🌐</span>
+                <span class="lbl i18n" data-key="nav_translator">Перевод</span>
+            </button>
+            <button class="bottom-nav-item" data-target="profile">
+                <span class="icon">👤</span>
+                <span class="lbl i18n" data-key="nav_profile">Профиль</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
